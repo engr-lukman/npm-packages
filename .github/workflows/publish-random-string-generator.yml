@@ -87,7 +87,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
-          registry-url: https://registry.npmjs.com
+          registry-url: https://registry.npmjs.org
 
       - name: Install package dependencies
         working-directory: ./src/random-string-generator
@@ -99,25 +99,14 @@ jobs:
         
       - name: Configure npm authentication
         run: |
-          echo "//registry.npmjs.com/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc
-          echo "registry=https://registry.npmjs.com/" >> ~/.npmrc
-          echo "always-auth=true" >> ~/.npmrc
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_PACKAGES_PUBLISH_TOKEN }}
-          
-      - name: Verify npm account and create scope if needed
-        run: |
-          echo "Verifying npm user..."
-          npm whoami || echo "Not logged in, using token authentication"
-          
-          # Don't try to create org if it will fail, just proceed with publish
-          echo "Will publish using configured authentication"
+          echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc
+          echo "registry=https://registry.npmjs.org/" >> ~/.npmrc
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PACKAGES_PUBLISH_TOKEN }}
 
-      - name: Publish package to npmjs.com
+      - name: Publish package to npmjs.org
         working-directory: ./src/random-string-generator
-        run: npm publish --access public
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PACKAGES_PUBLISH_TOKEN }}
 
@@ -125,4 +114,4 @@ jobs:
         run: |
           echo "## ✅ Package Published Successfully" >> $GITHUB_STEP_SUMMARY
           echo "Random String Generator package v${{ needs.check-version-change.outputs.current_version }} has been published to npmjs.com." >> $GITHUB_STEP_SUMMARY
-          echo "Package URL: https://www.npmjs.com/package/@engr-lukman/random-string-generator" >> $GITHUB_STEP_SUMMARY
+          echo "Package URL: https://www.npmjs.com/package/random-string-generator" >> $GITHUB_STEP_SUMMARY
