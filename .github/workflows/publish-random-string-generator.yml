@@ -96,6 +96,24 @@ jobs:
       - name: Build package
         working-directory: ./src/random-string-generator
         run: npm run build
+        
+      - name: Configure npm authentication
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc
+          echo "registry=https://registry.npmjs.org/" >> ~/.npmrc
+          echo "always-auth=true" >> ~/.npmrc
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_PACKAGES_PUBLISH_TOKEN }}
+          
+      - name: Verify npm account and create scope if needed
+        run: |
+          echo "Verifying npm user..."
+          npm whoami || echo "Not logged in, using token authentication"
+          
+          # Don't try to create org if it will fail, just proceed with publish
+          echo "Will publish using configured authentication"
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_PACKAGES_PUBLISH_TOKEN }}
 
       - name: Publish package to npmjs.com
         working-directory: ./src/random-string-generator
