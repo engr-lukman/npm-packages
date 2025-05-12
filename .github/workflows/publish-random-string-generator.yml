@@ -96,6 +96,20 @@ jobs:
       - name: Build package
         working-directory: ./src/random-string-generator
         run: npm run build
+      
+      - name: Configure npm authentication
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_PACKAGES_PUBLISH_TOKEN }}
+          
+      - name: Create npm scope
+        run: |
+          # Attempt to check if scope exists and create it if it doesn't
+          npm login --registry=https://registry.npmjs.org/ --scope=@engr-lukman --always-auth=true
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_PACKAGES_PUBLISH_TOKEN }}
+        continue-on-error: true
 
       - name: Publish package to npmjs.com
         working-directory: ./src/random-string-generator
