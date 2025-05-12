@@ -1,0 +1,44 @@
+# Source files (only dist is published)
+src/
+
+# Configuration files
+tsconfig.json
+vite.config.ts
+.gitignore
+.npmrc
+
+# Editor directories and files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+
+# Development files
+RandomStringGenerator.stories.js
+node_modules/
+.pnpm-store/
+
+# Tests
+test/
+*.test.ts
+*.spec.ts
+coverage/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment variables
+.env*
+
+# Temporary files
+.tmp/
+.temp/
