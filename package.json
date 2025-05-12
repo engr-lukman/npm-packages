@@ -1,0 +1,41 @@
+{
+  "name": "npm-packages",
+  "version": "1.0.0",
+  "description": "Collection of reusable components and utilities for ReactJS, VueJS, and NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "keywords": [
+    "GitHub",
+    "GitHub Actions",
+    "GitHub NPM Packages",
+    "NPM Packages",
+    "ReactJS",
+    "VueJS",
+    "NodeJS"
+  ],
+  "author": "Mohammad Lukman Hussain",
+  "license": "MIT",
+  "type": "commonjs",
+  "devDependencies": {
+    "@chromatic-com/storybook": "^3.2.6",
+    "@storybook/addon-essentials": "^8.6.12",
+    "@storybook/addon-onboarding": "^8.6.12",
+    "@storybook/blocks": "^8.6.12",
+    "@storybook/experimental-addon-test": "^8.6.12",
+    "@storybook/test": "^8.6.12",
+    "@storybook/vue3": "^8.6.12",
+    "@storybook/vue3-vite": "^8.6.12",
+    "@vitejs/plugin-vue": "^5.2.3",
+    "@vitest/browser": "^3.1.2",
+    "@vitest/coverage-v8": "^3.1.2",
+    "playwright": "^1.52.0",
+    "storybook": "^8.6.12",
+    "vitest": "^3.1.2"
+  }
+}
