@@ -1,5 +1,5 @@
 {
-  "name": "random-string-generator",
+  "name": "lukman-random-string-generator",
   "version": "0.0.1",
   "description": "A utility library for generating random strings with TypeScript support",
   "main": "dist/random-string-generator.umd.js",
