@@ -24,6 +24,10 @@ This repository contains a suite of reusable components and utilities designed t
   - A lightweight utility for generating random strings with configurable options.
   - For detailed documentation and usage examples, please refer to the [package README](/src/random-string-generator/README.md).
 
+- #### [Is Object Checker](https://github.com/engr-lukman/npm-packages/tree/main/src/is-object-checker)
+  - A lightweight utility for checking if a value is a plain object (not an array and not null).
+  - For detailed documentation and usage examples, please refer to the [package README](/src/is-object-checker/README.md).
+
 ### Components
 - *More packages coming soon!*
 
