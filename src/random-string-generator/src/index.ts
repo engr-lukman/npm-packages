@@ -2,7 +2,7 @@
  * @file Random String Generator
  * @description A lightweight utility for generating random strings with customizable options
  * @author Mohammad Lukman Hussain
- * @version 0.0.2
+ * @version 1.0.0
  */
 
 /**
