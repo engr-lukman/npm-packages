@@ -104,8 +104,7 @@ jobs:
         with:
           folder: storybook-static  # Directory containing the static build output
           branch: gh-pages          # Branch to deploy to (GitHub Pages reads from this branch)
-        #   token: ${{ secrets.GITHUB_TOKEN }}  # Use GitHub token for authentication
-          token: ${{ github.token }}  # Use GitHub token for authentication
+          token: ${{ secrets.GITHUB_TOKEN }}  # Use GitHub token for authentication
           
       - name: Deployment summary
         run: |
