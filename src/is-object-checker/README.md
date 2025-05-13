@@ -12,6 +12,10 @@ yarn add @engr-lukman/is-object-checker
 pnpm add @engr-lukman/is-object-checker
 ```
 
+## Demo
+
+Check out the [interactive Storybook demo](https://engr-lukman.github.io/npm-packages/?path=/story/utilities-isobjectchecker--empty-object) to see the component in action.
+
 ## Features
 
 - Accurately detects pure JavaScript objects
