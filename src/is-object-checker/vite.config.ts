@@ -1,32 +1,44 @@
+/**
+ * Vite configuration for IsObjectChecker package
+ * 
+ * This configuration optimizes the build process for publishing
+ * as an NPM package with proper TypeScript definitions.
+ */
 import { defineConfig } from 'vite';
-import dts from 'vite-plugin-dts'; // Plugin to generate TypeScript declaration files
+import dts from 'vite-plugin-dts';
 import { resolve } from 'path';
 
-/**
- * Vite configuration for building the is-object-checker library
- * This configuration produces both ESM and UMD builds with TypeScript declarations
- */
 export default defineConfig({
   build: {
+    // Library configuration
     lib: {
-      // Source entry file
+      // Entry point for the package
       entry: resolve(__dirname, 'src/index.ts'),
-      // Global variable name when used in browser via UMD build
+      // Global variable name when used in browser (UMD build)
       name: 'IsObjectChecker',
-      // Output filename pattern for the different formats
+      // Output file name patterns
       fileName: (format) => `is-object-checker.${format}.js`,
     },
-    // Generate source maps for easier debugging
+    // Generate sourcemaps for easier debugging
     sourcemap: true,
+    // Clean output directory before each build
+    emptyOutDir: true,
+    // Configure Rollup options
     rollupOptions: {
-      // List external dependencies that shouldn't be bundled
-      external: [],
       output: {
-        // Define global variable names for external dependencies when using UMD build
-        globals: {},
+        // Use named exports format
+        exports: 'named',
       },
     },
   },
-  // Generate TypeScript declaration files (.d.ts)
-  plugins: [dts()],
+  // Configure plugins
+  plugins: [
+    // Generate TypeScript declaration files
+    dts({ 
+      // Include TypeScript files for declaration generation
+      include: ['src/**/*.ts'],
+      // Output directory for declarations
+      outDir: 'dist',
+    }),
+  ],
 });

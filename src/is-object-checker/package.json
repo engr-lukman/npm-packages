@@ -1,6 +1,6 @@
 {
   "name": "@engr-lukman/is-object-checker",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A lightweight utility for checking if a value is a plain object with TypeScript support",
   "main": "dist/is-object-checker.umd.js",
   "module": "dist/is-object-checker.es.js",
@@ -39,6 +39,6 @@
   "devDependencies": {
     "typescript": "^5.0.0",
     "vite": "^5.0.0",
-    "vite-plugin-dts": "^3.6.0"
+    "vite-plugin-dts": "^3.9.1"
   }
 }
