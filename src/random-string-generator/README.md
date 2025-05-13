@@ -1,15 +1,15 @@
-# Lukman Random String Generator
+# Random String Generator
 
 A lightweight, TypeScript-compatible utility for generating random strings.
 
 ## Installation
 
 ```bash
-npm install lukman-random-string-generator
+npm install @engr-lukman/random-string-generator
 # or
-yarn add lukman-random-string-generator
+yarn add @engr-lukman/random-string-generator
 # or
-pnpm add lukman-random-string-generator
+pnpm add @engr-lukman/random-string-generator
 ```
 
 ## Features
@@ -27,7 +27,7 @@ pnpm add lukman-random-string-generator
 ### Basic Usage
 
 ```typescript
-import { generateRandomString } from 'lukman-random-string-generator';
+import { generateRandomString } from '@engr-lukman/random-string-generator';
 
 // Generate a random string with default length (32 characters)
 const randomStr = generateRandomString();
@@ -45,7 +45,7 @@ console.log(uniqueStr); // e.g., "10EFRG2WCV6BN4ML0ADFKP2JH7SQ9RT"
 ### Custom Character Set
 
 ```typescript
-import { generateRandomStringWithCharset } from 'lukman-random-string-generator';
+import { generateRandomStringWithCharset } from '@engr-lukman/random-string-generator';
 
 // Generate a random string using only numbers
 const randomNumbers = generateRandomStringWithCharset(6, '0123456789');

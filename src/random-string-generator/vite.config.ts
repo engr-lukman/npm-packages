@@ -6,7 +6,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
-      name: 'LukmanRandomStringGenerator',
+      name: 'RandomStringGenerator',
       fileName: (format) => `random-string-generator.${format}.js`,
     },
     sourcemap: true,

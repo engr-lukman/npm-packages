@@ -42,4 +42,4 @@ jobs:
         run: |
           echo "## ✅ Package Published Successfully" >> $GITHUB_STEP_SUMMARY
           echo "Random String Generator package has been published to npmjs.com." >> $GITHUB_STEP_SUMMARY
-          echo "Package URL: https://www.npmjs.com/package/random-string-generator" >> $GITHUB_STEP_SUMMARY
+          echo "Package URL: https://www.npmjs.com/package/@engr-lukman/random-string-generator" >> $GITHUB_STEP_SUMMARY
