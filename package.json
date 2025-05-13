@@ -1,6 +1,6 @@
 {
   "name": "npm-packages",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Collection of reusable components and utilities for ReactJS, VueJS, and NodeJS",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,8 @@
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "keywords": [
     "GitHub",
@@ -17,7 +18,8 @@
     "NPM Packages",
     "ReactJS",
     "VueJS",
-    "NodeJS"
+    "NodeJS",
+    "@storybook/storybook-deployer"
   ],
   "author": "Mohammad Lukman Hussain",
   "license": "MIT",
@@ -28,6 +30,7 @@
     "@storybook/addon-onboarding": "^8.6.12",
     "@storybook/blocks": "^8.6.12",
     "@storybook/experimental-addon-test": "^8.6.12",
+    "@storybook/storybook-deployer": "^2.8.16",
     "@storybook/test": "^8.6.12",
     "@storybook/vue3": "^8.6.12",
     "@storybook/vue3-vite": "^8.6.12",

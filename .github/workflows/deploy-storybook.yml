@@ -1,0 +1,53 @@
+# Deploy Storybook to GitHub Pages
+# This workflow builds and deploys your Storybook documentation to GitHub Pages
+
+name: Deploy Storybook to GitHub Pages
+
+# Trigger conditions: Run when code is pushed directly to main branch or when a PR is merged to main
+on:
+  push:
+    branches:
+      - main 
+  pull_request:
+    types: [closed]
+    branches:
+      - main
+
+# Permissions required for deployment
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  build-and-deploy:
+    # Only run on PR merge (not on any PR close)
+    if: github.event_name != 'pull_request' || github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Check out the repository code
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false  # Don't save GitHub credentials in the build environment
+
+      # Step 2: Set up the Node.js environment
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      # Step 3: Install project dependencies using npm
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Build the Storybook static site
+      - name: Build Storybook
+        run: npm run build-storybook  # Generates static files in storybook-static folder
+
+      # Step 5: Deploy the built Storybook to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: storybook-static  # Directory containing the static build output
+          branch: gh-pages          # Branch to deploy to (GitHub Pages reads from this branch)
