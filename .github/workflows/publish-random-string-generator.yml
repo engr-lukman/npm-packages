@@ -1,5 +1,9 @@
 name: Publish Random String Generator Package
 
+# This workflow automatically publishes the Random String Generator package to npmjs.com
+# Triggers:
+# - When pushing to main branch with changes to random-string-generator/package.json
+# - When a pull request to main branch is merged with changes to random-string-generator/package.json
 on:
   push:
     branches: 
@@ -14,21 +18,53 @@ on:
       - 'src/random-string-generator/package.json'
 
 jobs:
-  release:
-    name: Publish
+  # Build and publish the package to npmjs.com
+  build-and-publish:
     runs-on: ubuntu-latest
-
+    # Only proceed when directly pushing to main branch or when PRs are actually merged
+    if: github.event_name != 'pull_request' || github.event.pull_request.merged == true
+    permissions:
+      contents: read  # Required to check out the repository
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Use Node.js 20
+      - name: Get package version
+        id: package-version
+        working-directory: ./src/random-string-generator
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Setup Node.js environment
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: 18
           registry-url: https://registry.npmjs.org
 
-      - name: Publish
-        run: npm publish --access public
+      - name: Install package dependencies
+        working-directory: ./src/random-string-generator
+        run: npm install
+
+      - name: Build package
+        working-directory: ./src/random-string-generator
+        run: npm run build
+        
+      - name: Configure npm authentication
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > ~/.npmrc
+          echo "registry=https://registry.npmjs.org/" >> ~/.npmrc
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PACKAGES_PUBLISH_TOKEN }}
+
+      - name: Publish package to npmjs.org
+        working-directory: ./src/random-string-generator
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_PACKAGES_PUBLISH_TOKEN }}
+
+      - name: Successfully published
+        run: |
+          echo "## ✅ Package Published Successfully" >> $GITHUB_STEP_SUMMARY
+          echo "Random String Generator package v${{ steps.package-version.outputs.version }} has been published to npmjs.com." >> $GITHUB_STEP_SUMMARY
+          echo "Package URL: https://www.npmjs.com/package/random-string-generator" >> $GITHUB_STEP_SUMMARY
