@@ -18,6 +18,12 @@ This repository contains a suite of reusable components and utilities designed t
 
 ## Packages
 
+### Utilities
+
+- #### [Random String Generator](https://github.com/engr-lukman/npm-packages/tree/main/src/random-string-generator)
+  - A lightweight utility for generating random strings with configurable options.
+  - For detailed documentation and usage examples, please refer to the [package README](/src/random-string-generator/README.md).
+
 ### Components
 - *More packages coming soon!*
 
