@@ -1,6 +1,6 @@
 {
   "name": "npm-packages",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Collection of reusable components and utilities for ReactJS, VueJS, and NodeJS",
   "main": "index.js",
   "scripts": {
