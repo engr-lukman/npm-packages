@@ -1,55 +1,55 @@
 name: Deploy Storybook to GitHub Pages
 
-# Trigger conditions: Run when code is pushed directly to main branch or when a PR is merged to main
+# This workflow automatically builds and deploys Storybook to GitHub Pages
+# Triggers:
+# - When pushing to main branch
+# - When a pull request to main branch is merged
 on:
   push:
-    branches:
-      - main 
+    branches: 
+      - "main"  # Triggers on the main branch
   pull_request:
     types: [closed]
     branches:
-      - main
-
-# Updated permissions to allow writing to the repository
-permissions:
-  contents: write
-  pages: write
-  id-token: write
+      - "main"
 
 jobs:
   build-and-deploy:
-    # Only run on PR merge (not on any PR close)
-    if: github.event_name != 'pull_request' || github.event.pull_request.merged == true
     runs-on: ubuntu-latest
-    # Add environment variables section
-    env:
-      NODE_AUTH_TOKEN: ${{ github.token }}
+    # Only proceed when directly pushing to main branch or when PRs are actually merged
+    if: github.event_name != 'pull_request' || github.event.pull_request.merged == true
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
     steps:
-      # Step 1: Check out the repository code
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          persist-credentials: true  # Changed to true to persist GitHub credentials
+          persist-credentials: true  # Persist GitHub credentials for deployment
 
-      # Step 2: Set up the Node.js environment
-      - name: Setup Node.js
+      # Use Node.js 20 LTS
+      - name: Setup Node.js environment
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: 20
           cache: 'npm'
 
-      # Step 3: Install project dependencies using npm
       - name: Install dependencies
         run: npm install
 
-      # Step 4: Build the Storybook static site
       - name: Build Storybook
         run: npm run build-storybook  # Generates static files in storybook-static folder
-
-      # Step 5: Deploy the built Storybook to GitHub Pages using the built-in GitHub Pages deployment
+        
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: storybook-static  # Directory containing the static build output
           branch: gh-pages          # Branch to deploy to (GitHub Pages reads from this branch)
           token: ${{ secrets.GITHUB_TOKEN }}  # Use GitHub token for authentication
+
+      - name: Deployment summary
+        run: |
+          echo "## ✅ Storybook Deployed Successfully" >> $GITHUB_STEP_SUMMARY
+          echo "Storybook has been deployed to GitHub Pages." >> $GITHUB_STEP_SUMMARY
+          echo "You can view it at: https://engr-lukman.github.io/npm-packages/" >> $GITHUB_STEP_SUMMARY
