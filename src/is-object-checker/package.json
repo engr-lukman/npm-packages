@@ -1,6 +1,6 @@
 {
   "name": "@engr-lukman/is-object-checker",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A lightweight utility for checking if a value is a plain object with TypeScript support",
   "main": "dist/is-object-checker.umd.js",
   "module": "dist/is-object-checker.es.js",
