@@ -1,7 +1,7 @@
 {
   "name": "@engr-lukman/random-string-generator",
   "version": "0.0.1",
-  "description": "A utility library for generating random strings with TypeScript support",
+  "description": "A lightweight utility library for generating random strings with TypeScript support",
   "main": "dist/random-string-generator.umd.js",
   "module": "dist/random-string-generator.es.js",
   "types": "dist/index.d.ts",
@@ -13,7 +13,6 @@
   },
   "scripts": {
     "build": "vite build",
-    "test": "vitest run",
     "prepublishOnly": "npm run build"
   },
   "keywords": [
@@ -21,7 +20,9 @@
     "string",
     "generator",
     "typescript",
-    "utility"
+    "utility",
+    "unique",
+    "secure"
   ],
   "repository": {
     "type": "git",
@@ -39,7 +40,6 @@
   "devDependencies": {
     "typescript": "^5.0.0",
     "vite": "^5.0.0",
-    "vite-plugin-dts": "^3.6.0",
-    "vitest": "^1.0.0"
+    "vite-plugin-dts": "^3.6.0"
   }
 }

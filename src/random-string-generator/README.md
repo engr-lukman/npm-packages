@@ -20,7 +20,7 @@ pnpm add @engr-lukman/random-string-generator
 - Full TypeScript support with type definitions
 - Zero dependencies
 - ES6 module compatible
-- Built for Node.js 20+ and modern browsers
+- Built for Node.js 20 LTS or higher and modern browsers
 
 ## Usage
 

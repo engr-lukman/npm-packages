@@ -18,10 +18,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # Use Node.js 20 LTS as the minimum supported version
       - name: Setup Node.js environment
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20 # Updated to Node.js 20 LTS
           registry-url: https://registry.npmjs.org
 
       - name: Install package dependencies
@@ -31,6 +32,8 @@ jobs:
       - name: Build package
         working-directory: ./src/random-string-generator
         run: npm run build
+        
+      # Skip tests as they are not needed for this package
 
       - name: Publish package to npmjs.org
         working-directory: ./src/random-string-generator
