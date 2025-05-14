@@ -1,6 +1,6 @@
 {
   "name": "@engr-lukman/email-validator",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "description": "A lightweight email validation utility with TypeScript support",
   "main": "dist/email-validator.umd.js",
   "module": "dist/email-validator.es.js",
