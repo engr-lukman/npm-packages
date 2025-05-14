@@ -1,0 +1,44 @@
+{
+  "name": "@engr-lukman/email-validator",
+  "version": "0.0.1",
+  "description": "A lightweight email validation utility with TypeScript support",
+  "main": "dist/email-validator.umd.js",
+  "module": "dist/email-validator.es.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "build": "vite build",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "email",
+    "validator",
+    "validation",
+    "typescript",
+    "utility",
+    "form"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/engr-lukman/npm-packages.git"
+  },
+  "homepage": "https://github.com/engr-lukman/npm-packages/tree/main/src/email-validator",
+  "bugs": {
+    "url": "https://github.com/engr-lukman/npm-packages/issues"
+  },
+  "author": "Mohammad Lukman Hussain",
+  "license": "MIT",
+  "peerDependencies": {
+    "typescript": ">=4.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "vite": "^5.0.0",
+    "vite-plugin-dts": "^3.9.1"
+  }
+}
