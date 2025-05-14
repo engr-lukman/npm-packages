@@ -14,7 +14,7 @@ pnpm add @engr-lukman/random-string-generator
 
 ## Demo
 
-Check out the <a href="https://engr-lukman.github.io/npm-packages/?path=/story/utilities-random-string-generator--default-random-string" target="_blank" rel="noopener noreferrer">interactive Storybook demo</a> to see the component in action.
+Check out the [interactive Storybook demo](https://engr-lukman.github.io/npm-packages/?path=/story/utilities-random-string-generator--default-random-string) to see the component in action.
 
 ## Features
 

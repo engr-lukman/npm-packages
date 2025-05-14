@@ -20,13 +20,13 @@ This repository contains a suite of reusable components and utilities designed t
 
 ### Utilities
 
-- #### <a href="https://github.com/engr-lukman/npm-packages/tree/main/src/random-string-generator" target="_blank" rel="noopener noreferrer">Random String Generator</a>
+- #### [Random String Generator](https://github.com/engr-lukman/npm-packages/tree/main/src/random-string-generator)
   - A lightweight utility for generating random strings with configurable options.
-  - For detailed documentation and usage examples, please refer to the <a href="/src/random-string-generator/README.md" target="_blank" rel="noopener noreferrer">package README</a>.
+  - For detailed documentation and usage examples, please refer to the [package README](/src/random-string-generator/README.md).
 
-- #### <a href="https://github.com/engr-lukman/npm-packages/tree/main/src/object-validator" target="_blank" rel="noopener noreferrer">Object Validator</a>
+- #### [Object Validator](https://github.com/engr-lukman/npm-packages/tree/main/src/object-validator)
   - A lightweight utility for checking if a value is a plain object (not an array and not null).
-  - For detailed documentation and usage examples, please refer to the <a href="/src/object-validator/README.md" target="_blank" rel="noopener noreferrer">package README</a>.
+  - For detailed documentation and usage examples, please refer to the [package README](/src/object-validator/README.md).
 
 ### Components
 - *More packages coming soon!*
@@ -41,7 +41,7 @@ Please refer to each package's individual README for detailed usage instructions
 
 ## Storybook Documentation
 
-We use Storybook to showcase and document component usage. Visit our Storybook documentation at <a href="https://engr-lukman.github.io/npm-packages" target="_blank" rel="noopener noreferrer">Storybook Docs</a>.
+We use Storybook to showcase and document component usage. Visit our Storybook documentation at [Storybook Docs](https://engr-lukman.github.io/npm-packages).
 
 To run the Storybook locally:
 
@@ -49,7 +49,7 @@ To run the Storybook locally:
 npm run storybook
 ```
 
-This will start Storybook on <a href="http://localhost:6006" target="_blank" rel="noopener noreferrer">http://localhost:6006</a>.
+This will start Storybook on [http://localhost:6006](http://localhost:6006).
 
 ## Development
 
