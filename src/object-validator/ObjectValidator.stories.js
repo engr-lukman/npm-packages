@@ -1,7 +1,7 @@
 import { isPureObject } from './src/index';
 
 export default {
-  title: 'Utilities/IsObjectChecker',
+  title: 'Utilities/Object Validator',
   argTypes: {
     valueType: {
       control: { type: 'select' },
@@ -72,7 +72,7 @@ const Template = ({ valueType, customValue }) => {
   return {
     template: `
       <div style="font-family: sans-serif; padding: 20px;">
-        <h2>Is Object Checker</h2>
+        <h2>Object Validator</h2>
         
         <div style="margin-bottom: 20px;">
           <h3>Input Value</h3>

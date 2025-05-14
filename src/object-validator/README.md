@@ -1,20 +1,20 @@
-# Is Object Checker
+# Object Validator
 
 A lightweight, TypeScript-compatible utility for checking if a value is a pure object (not an array and not null).
 
 ## Installation
 
 ```bash
-npm install @engr-lukman/is-object-checker
+npm install @engr-lukman/object-validator
 # or
-yarn add @engr-lukman/is-object-checker
+yarn add @engr-lukman/object-validator
 # or
-pnpm add @engr-lukman/is-object-checker
+pnpm add @engr-lukman/object-validator
 ```
 
 ## Demo
 
-Check out the [interactive Storybook demo](https://engr-lukman.github.io/npm-packages/?path=/story/utilities-isobjectchecker--empty-object) to see the component in action.
+Check out the [interactive Storybook demo](https://engr-lukman.github.io/npm-packages/?path=/story/utilities-object-validator--empty-object) to see the component in action.
 
 ## Features
 
@@ -32,10 +32,10 @@ Check out the [interactive Storybook demo](https://engr-lukman.github.io/npm-pac
 
 ```typescript
 // ES Modules / TypeScript
-import isPureObject from '@engr-lukman/is-object-checker';
+import isPureObject from '@engr-lukman/object-validator';
 
 // CommonJS
-const isPureObject = require('@engr-lukman/is-object-checker').default;
+const isPureObject = require('@engr-lukman/object-validator').default;
 
 // Examples
 isPureObject({});                  // true
@@ -51,7 +51,7 @@ isPureObject(() => {});            // false (functions are not pure objects)
 ### With TypeScript Type Guards
 
 ```typescript
-import isPureObject from '@engr-lukman/is-object-checker';
+import isPureObject from '@engr-lukman/object-validator';
 
 function processValue(value: unknown): void {
   if (isPureObject(value)) {

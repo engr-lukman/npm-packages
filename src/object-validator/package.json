@@ -1,9 +1,9 @@
 {
-  "name": "@engr-lukman/is-object-checker",
-  "version": "1.0.1",
+  "name": "@engr-lukman/object-validator",
+  "version": "0.0.1",
   "description": "A lightweight utility for checking if a value is a plain object with TypeScript support",
-  "main": "dist/is-object-checker.umd.js",
-  "module": "dist/is-object-checker.es.js",
+  "main": "dist/object-validator.umd.js",
+  "module": "dist/object-validator.es.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
@@ -18,7 +18,7 @@
   "keywords": [
     "object",
     "type",
-    "checker",
+    "validator",
     "typescript",
     "utility",
     "validation"
@@ -27,7 +27,7 @@
     "type": "git",
     "url": "git+https://github.com/engr-lukman/npm-packages.git"
   },
-  "homepage": "https://github.com/engr-lukman/npm-packages/tree/main/src/is-object-checker",
+  "homepage": "https://github.com/engr-lukman/npm-packages/tree/main/src/object-validator",
   "bugs": {
     "url": "https://github.com/engr-lukman/npm-packages/issues"
   },

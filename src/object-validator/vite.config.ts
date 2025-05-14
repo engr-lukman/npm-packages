@@ -1,5 +1,5 @@
 /**
- * Vite configuration for IsObjectChecker package
+ * Vite configuration for ObjectValidator package
  * 
  * This configuration optimizes the build process for publishing
  * as an NPM package with proper TypeScript definitions.
@@ -15,9 +15,9 @@ export default defineConfig({
       // Entry point for the package
       entry: resolve(__dirname, 'src/index.ts'),
       // Global variable name when used in browser (UMD build)
-      name: 'IsObjectChecker',
+      name: 'ObjectValidator',
       // Output file name patterns
-      fileName: (format) => `is-object-checker.${format}.js`,
+      fileName: (format) => `object-validator.${format}.js`,
     },
     // Generate sourcemaps for easier debugging
     sourcemap: true,

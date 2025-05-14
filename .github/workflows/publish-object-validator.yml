@@ -1,21 +1,21 @@
-name: Publish Is Object Checker Package
+name: Publish Object Validator Package
 
-# This workflow automatically publishes the Is Object Checker package to npmjs.com
+# This workflow automatically publishes the Object Validator package to npmjs.com
 # Triggers:
-# - When pushing to main branch with changes to is-object-checker/package.json
-# - When a pull request to main branch is merged with changes to is-object-checker/package.json
+# - When pushing to main branch with changes to object-validator/package.json
+# - When a pull request to main branch is merged with changes to object-validator/package.json
 on:
   push:
     branches: 
       - "main"  # Triggers on the main branch
     paths:
-      - 'src/is-object-checker/package.json'
+      - 'src/object-validator/package.json'
   pull_request:
     types: [closed]
     branches:
       - "main"
     paths:
-      - 'src/is-object-checker/package.json'
+      - 'src/object-validator/package.json'
 
 jobs:
   # First job: Check if the package version has been updated
@@ -47,8 +47,8 @@ jobs:
           fi
           
           # Extract and compare package versions between commits
-          PREVIOUS_VERSION=$(git show $PREVIOUS_COMMIT:src/is-object-checker/package.json | grep '"version":' | cut -d '"' -f 4)
-          CURRENT_VERSION=$(git show $CURRENT_COMMIT:src/is-object-checker/package.json | grep '"version":' | cut -d '"' -f 4)
+          PREVIOUS_VERSION=$(git show $PREVIOUS_COMMIT:src/object-validator/package.json | grep '"version":' | cut -d '"' -f 4)
+          CURRENT_VERSION=$(git show $CURRENT_COMMIT:src/object-validator/package.json | grep '"version":' | cut -d '"' -f 4)
           
           echo "Previous version: $PREVIOUS_VERSION"
           echo "Current version: $CURRENT_VERSION"
@@ -92,15 +92,15 @@ jobs:
           registry-url: https://registry.npmjs.org
 
       - name: Install package dependencies
-        working-directory: ./src/is-object-checker
+        working-directory: ./src/object-validator
         run: npm install
 
       - name: Build package
-        working-directory: ./src/is-object-checker
+        working-directory: ./src/object-validator
         run: npm run build
         
       - name: Publish package to npmjs.org
-        working-directory: ./src/is-object-checker
+        working-directory: ./src/object-validator
         run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_PACKAGES_PUBLISH_TOKEN }}
@@ -108,5 +108,5 @@ jobs:
       - name: Successfully published
         run: |
           echo "## ✅ Package Published Successfully" >> $GITHUB_STEP_SUMMARY
-          echo "Is Object Checker package v${{ needs.check-version-change.outputs.current_version }} has been published to npmjs.com." >> $GITHUB_STEP_SUMMARY
-          echo "Package URL: https://www.npmjs.com/package/@engr-lukman/is-object-checker" >> $GITHUB_STEP_SUMMARY
+          echo "Object Validator package v${{ needs.check-version-change.outputs.current_version }} has been published to npmjs.com." >> $GITHUB_STEP_SUMMARY
+          echo "Package URL: https://www.npmjs.com/package/@engr-lukman/object-validator" >> $GITHUB_STEP_SUMMARY
