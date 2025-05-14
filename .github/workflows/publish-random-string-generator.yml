@@ -4,6 +4,7 @@ name: Publish Random String Generator Package
 # Triggers:
 # - When pushing to main branch with changes to random-string-generator/package.json
 # - When a pull request to main branch is merged with changes to random-string-generator/package.json
+# - When the version is 0.0.1 (initial version)
 on:
   push:
     branches: 
@@ -18,7 +19,7 @@ on:
       - 'src/random-string-generator/package.json'
 
 jobs:
-  # First job: Check if the package version has been updated
+  # First job: Check if the package version has been updated or is the initial version (0.0.1)
   check-version-change:
     runs-on: ubuntu-latest
     # Only proceed when directly pushing to main branch or when PRs are actually merged
@@ -32,7 +33,7 @@ jobs:
         with:
           fetch-depth: 2  # Fetch last 2 commits to compare versions
 
-      - name: Check if version changed
+      - name: Check if version changed or is initial version
         id: check
         run: |
           # For pull requests, compare base and head commits
@@ -56,12 +57,16 @@ jobs:
           # Set the current version as output for use in summary
           echo "current_version=$CURRENT_VERSION" >> $GITHUB_OUTPUT
           
-          # Determine whether to publish based on version change
-          if [ "$PREVIOUS_VERSION" != "$CURRENT_VERSION" ]; then
-            echo "Package version updated from $PREVIOUS_VERSION to $CURRENT_VERSION. Will publish."
+          # Determine whether to publish based on version change or initial version
+          if [ "$PREVIOUS_VERSION" != "$CURRENT_VERSION" ] || [ "$CURRENT_VERSION" == "0.0.1" ]; then
+            if [ "$CURRENT_VERSION" == "0.0.1" ]; then
+              echo "Initial version detected (0.0.1). Will publish."
+            else
+              echo "Package version updated from $PREVIOUS_VERSION to $CURRENT_VERSION. Will publish."
+            fi
             echo "version_changed=true" >> $GITHUB_OUTPUT
           else
-            echo "Package version unchanged ($CURRENT_VERSION). Skipping publish."
+            echo "Package version unchanged ($CURRENT_VERSION) and not initial version. Skipping publish."
             echo "version_changed=false" >> $GITHUB_OUTPUT
           fi
 
@@ -69,7 +74,7 @@ jobs:
         if: steps.check.outputs.version_changed == 'false'
         run: |
           echo "## ⚠️ Publish Skipped" >> $GITHUB_STEP_SUMMARY
-          echo "Package version was not changed in this commit. Publishing was skipped." >> $GITHUB_STEP_SUMMARY
+          echo "Package version was not changed in this commit and is not the initial version. Publishing was skipped." >> $GITHUB_STEP_SUMMARY
 
   # Second job: Build and publish the package to npmjs.com
   build-and-publish:
