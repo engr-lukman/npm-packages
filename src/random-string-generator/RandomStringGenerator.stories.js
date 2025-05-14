@@ -1,7 +1,7 @@
 import { generateRandomString, generateRandomStringWithCharset } from './src/index';
 
 export default {
-  title: 'Utilities/RandomStringGenerator',
+  title: 'Utilities/Random String Generator',
   argTypes: {
     length: {
       control: { type: 'number', min: 1, max: 100 },
