@@ -111,4 +111,4 @@ jobs:
         run: |
           echo "## ✅ Storybook Deployed Successfully" >> $GITHUB_STEP_SUMMARY
           echo "Storybook v${{ needs.check-version-change.outputs.current_version }} has been deployed to GitHub Pages." >> $GITHUB_STEP_SUMMARY
-          echo "You can view it at: https://engr-lukman.github.io/npm-packages/" >> $GITHUB_STEP_SUMMARY
+          echo "You can view it at: <a href='https://engr-lukman.github.io/npm-packages/' target='_blank' rel='noopener noreferrer'>Storybook Docs</a>" >> $GITHUB_STEP_SUMMARY
