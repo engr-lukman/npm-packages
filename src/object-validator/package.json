@@ -1,6 +1,6 @@
 {
   "name": "@engr-lukman/object-validator",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "A lightweight utility for checking if a value is a plain object with TypeScript support",
   "main": "dist/object-validator.umd.js",
   "module": "dist/object-validator.es.js",

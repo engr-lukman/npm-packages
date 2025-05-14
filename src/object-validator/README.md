@@ -14,7 +14,7 @@ pnpm add @engr-lukman/object-validator
 
 ## Demo
 
-Check out the [interactive Storybook demo](https://engr-lukman.github.io/npm-packages/?path=/story/utilities-object-validator--empty-object) to see the component in action.
+Check out the <a href="https://engr-lukman.github.io/npm-packages/?path=/story/utilities-object-validator--empty-object" target="_blank" rel="noopener noreferrer">interactive Storybook demo</a> to see the component in action.
 
 ## Features
 

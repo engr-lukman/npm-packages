@@ -109,4 +109,4 @@ jobs:
         run: |
           echo "## ✅ Package Published Successfully" >> $GITHUB_STEP_SUMMARY
           echo "Object Validator package v${{ needs.check-version-change.outputs.current_version }} has been published to npmjs.com." >> $GITHUB_STEP_SUMMARY
-          echo "Package URL: https://www.npmjs.com/package/@engr-lukman/object-validator" >> $GITHUB_STEP_SUMMARY
+          echo "Package Link: <a href='https://www.npmjs.com/package/@engr-lukman/object-validator' target='_blank' rel='noopener noreferrer'>Object Validator</a>" >> $GITHUB_STEP_SUMMARY
