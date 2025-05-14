@@ -28,6 +28,10 @@ This repository contains a suite of reusable components and utilities designed t
   - A lightweight utility for checking if a value is a plain object (not an array and not null).
   - For detailed documentation and usage examples, please refer to the [package README](/src/object-validator/README.md).
 
+- #### [Email Validator](https://github.com/engr-lukman/npm-packages/tree/main/src/email-validator)
+  - A lightweight utility for validating email addresses with TypeScript support.
+  - For detailed documentation and usage examples, please refer to the [package README](/src/email-validator/README.md).
+
 ### Components
 - *More packages coming soon!*
 
