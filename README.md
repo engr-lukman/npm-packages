@@ -20,17 +20,10 @@ This repository contains a suite of reusable components and utilities designed t
 
 ### Utilities
 
-- #### [Random String Generator](https://github.com/engr-lukman/npm-packages/tree/main/src/random-string-generator)
-  - A lightweight utility for generating random strings with configurable options.
-  - For detailed documentation and usage examples, please refer to the [package README](/src/random-string-generator/README.md).
-
-- #### [Object Validator](https://github.com/engr-lukman/npm-packages/tree/main/src/object-validator)
-  - A lightweight utility for checking if a value is a plain object (not an array and not null).
-  - For detailed documentation and usage examples, please refer to the [package README](/src/object-validator/README.md).
-
-- #### [Email Validator](https://github.com/engr-lukman/npm-packages/tree/main/src/email-validator)
-  - A lightweight utility for validating email addresses with TypeScript support.
-  - For detailed documentation and usage examples, please refer to the [package README](/src/email-validator/README.md).
+- [Random String Generator](/tree/main/src/random-string-generator)
+- [Object Validator](/tree/main/src/object-validator)
+- [Array Object Validator](/tree/main/src/array-object-validator)
+- [Email Validator](/tree/main/src/email-validator)
 
 ### Components
 - *More packages coming soon!*
