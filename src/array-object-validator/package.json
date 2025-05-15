@@ -1,6 +1,6 @@
 {
   "name": "@engr-lukman/array-object-validator",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A lightweight utility for checking if a value is a valid array of objects with TypeScript support",
   "main": "dist/array-object-validator.umd.js",
   "module": "dist/array-object-validator.es.js",
