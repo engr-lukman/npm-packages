@@ -20,10 +20,13 @@ This repository contains a suite of reusable components and utilities designed t
 
 ### Utilities
 
-- [Random String Generator](tree/main/src/random-string-generator)
-- [Object Validator](tree/main/src/object-validator)
-- [Array Object Validator](tree/main/src/array-object-validator)
-- [Email Validator](tree/main/src/email-validator)
+- [Random String Generator](/src/random-string-generator)
+
+- [Object Validator](/src/object-validator)
+
+- [Array Object Validator](/src/array-object-validator)
+
+- [Email Validator](/src/email-validator)
 
 ### Components
 - *More packages coming soon!*
