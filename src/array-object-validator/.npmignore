@@ -1,0 +1,61 @@
+# Development files
+src/
+tests/
+*.test.*
+*.spec.*
+
+# Config files
+.eslintrc
+.prettierrc
+.babelrc
+vite.config.ts
+tsconfig.json
+jest.config.js
+.storybook/
+*.stories.js
+*.stories.jsx
+*.stories.ts
+*.stories.tsx
+
+# Documentation files (except README)
+docs/
+examples/
+
+# CI/CD
+.github/
+.gitlab/
+.travis.yml
+.circleci/
+*.yml
+*.yaml
+
+# Git
+.git/
+.gitignore
+
+# Editor configs
+.vscode/
+.idea/
+*.sublime-*
+.editorconfig
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Coverage and testing
+coverage/
+.nyc_output/
+
+# Misc
+.DS_Store
+.env*
+node_modules/
+storybook-static/
+screenshot*
+*.png
+*.jpg
+*.gif

@@ -1,0 +1,45 @@
+{
+  "name": "@engr-lukman/array-object-validator",
+  "version": "0.0.0",
+  "description": "A lightweight utility for checking if a value is a valid array of objects with TypeScript support",
+  "main": "dist/array-object-validator.umd.js",
+  "module": "dist/array-object-validator.es.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "build": "vite build",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "array",
+    "object",
+    "validator",
+    "typescript",
+    "utility",
+    "validation",
+    "objects"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/engr-lukman/npm-packages.git"
+  },
+  "homepage": "https://github.com/engr-lukman/npm-packages/tree/main/src/array-object-validator",
+  "bugs": {
+    "url": "https://github.com/engr-lukman/npm-packages/issues"
+  },
+  "author": "Mohammad Lukman Hussain",
+  "license": "MIT",
+  "peerDependencies": {
+    "typescript": ">=4.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "vite": "^5.0.0",
+    "vite-plugin-dts": "^3.9.1"
+  }
+}
