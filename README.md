@@ -21,11 +21,8 @@ This repository contains a suite of reusable components and utilities designed t
 ### Utilities
 
 - [Random String Generator](/src/random-string-generator)
-
 - [Object Validator](/src/object-validator)
-
 - [Array Object Validator](/src/array-object-validator)
-
 - [Email Validator](/src/email-validator)
 
 ### Components
