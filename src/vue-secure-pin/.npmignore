@@ -1,0 +1,54 @@
+# Source files (only dist is published)
+src/
+
+# Development and build files
+node_modules/
+examples/
+.vscode/
+coverage/
+tests/
+test/
+__tests__/
+docs/
+.github/
+.git/
+
+# Configuration files
+vite.config.js
+vite.config.ts
+.editorconfig
+.prettierrc
+.eslintrc*
+
+# Storybook files
+*.stories.ts
+*.stories.js
+secure-pin-component.png
+.eslintignore
+.browserslistrc
+.nvmrc
+.node-version
+.gitattributes
+.gitignore
+.npmrc
+
+# Development files
+SecurePin.stories.ts
+secure-pin-component.png
+*.stories.*
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor directories and files
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
