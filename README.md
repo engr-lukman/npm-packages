@@ -26,7 +26,9 @@ This repository contains a suite of reusable components and utilities designed t
 - [Email Validator](/src/email-validator)
 
 ### Components
-- *More packages coming soon!*
+- [Vue Secure Pin](/src/vue-secure-pin)
+- [Vue Secure Password](/src/vue-secure-password)
+
 
 ## Installation
 
