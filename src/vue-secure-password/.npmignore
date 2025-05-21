@@ -1,0 +1,48 @@
+# Source files (only dist is published)
+src/
+
+# Development and build files
+node_modules/
+examples/
+.vscode/
+coverage/
+tests/
+test/
+__tests__/
+docs/
+.github/
+.git/
+
+# Configuration files
+vite.config.js
+vite.config.ts
+.editorconfig
+.prettierrc
+.eslintrc*
+.eslintignore
+.browserslistrc
+.nvmrc
+.gitattributes
+.gitignore
+.npmrc
+
+# Development files
+VueSecurePassword.stories.ts
+secure-password-component.png
+*.stories.*
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor directories and files
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
