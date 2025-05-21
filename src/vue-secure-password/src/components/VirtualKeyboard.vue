@@ -102,7 +102,7 @@ const specials = ref("!@#$%^&*()-_+=[]{}:;'\",.<>/?|\\`~");
 
 const isUpperCase = ref(true);
 
-const shuffle = (str) => {
+const shuffle = (str: string) => {
   const strArray = str.split("");
 
   const newArray = [...strArray];
@@ -122,7 +122,7 @@ const toggleHandler = () => {
   isUpperCase.value = !isUpperCase.value;
 };
 
-const onClickHandler = (char) => {
+const onClickHandler = (char: string) => {
   if (props?.isMaxLengthReached) return;
 
   if (props?.isEnableShuffle) {

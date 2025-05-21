@@ -52,20 +52,3 @@ export const WithError: Story = {
     clearLabel: "Clear",
   }
 };
-
-/**
- * With shuffled keypad
- */
-export const WithShuffledKeypad: Story = {
-  args: {
-    maxLength: 100,
-    isError: false,
-    errorMessage: "",
-    placeholder: "Enter Password",
-    isEnableShuffle: true,
-    showKeyboard: true,
-    title: "Use this keyboard to enter your password",
-    shiftLabel: "Aa",
-    clearLabel: "Clear",
-  }
-};

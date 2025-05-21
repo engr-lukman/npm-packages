@@ -87,7 +87,7 @@ const emit = defineEmits<{
 
 // Component state management - keyboard show by default unless explicitly disabled
 const showKeyboard = ref(props.showKeyboard);
-const keyboardPopup = ref(null);
+const keyboardPopup = ref<HTMLElement | null>(null);
 
 // Initialize password handling logic with computed values
 const { passwordMasked, password, isMaxLengthReached, clear, passwordHandler } =
@@ -111,7 +111,7 @@ const clearHandler = () => {
 /**
  * Processes keyboard input and emits updated password values
  */
-const keyboardHandler = (value) => {
+const keyboardHandler = (value: string) => {
   passwordHandler(value);
   emit("callbackEvent", {
     password: password.value,
@@ -122,11 +122,11 @@ const keyboardHandler = (value) => {
 /**
  * Closes keyboard when clicking outside component
  */
-const handleClickOutside = (event) => {
+const handleClickOutside = (event: MouseEvent) => {
   if (
     keyboardPopup.value &&
-    !keyboardPopup.value.contains(event.target) &&
-    !event.target.closest(".password__toggle")
+    !keyboardPopup.value.contains(event.target as Node) &&
+    !(event.target as Element).closest(".password__toggle")
   ) {
     showKeyboard.value = false;
   }
