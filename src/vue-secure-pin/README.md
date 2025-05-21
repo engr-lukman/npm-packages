@@ -2,7 +2,7 @@
 
 A secure PIN input component for Vue.js applications with a virtual keyboard and PIN masking, specifically designed for financial applications.
 
-![Secure PIN Component](./secure-pin-component.png)
+![Secure PIN Component](https://raw.githubusercontent.com/engr-lukman/npm-packages/main/src/vue-secure-pin/secure-pin-component.png)
 
 ## Demo
 
