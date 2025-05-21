@@ -1,6 +1,6 @@
 {
   "name": "@engr-lukman/vue-secure-pin",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "A secure PIN input component for Vue.js applications with virtual keyboard and PIN masking, designed for financial applications",
   "main": "dist/vue-secure-pin.umd.js",
   "module": "dist/vue-secure-pin.es.js",

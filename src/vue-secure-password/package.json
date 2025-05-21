@@ -1,6 +1,6 @@
 {
   "name": "@engr-lukman/vue-secure-password",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "A secure password input component for Vue.js applications with virtual keyboard and password masking, designed for financial applications",
   "main": "dist/vue-secure-password.umd.js",
   "module": "dist/vue-secure-password.es.js",
