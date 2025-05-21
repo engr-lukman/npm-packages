@@ -13,8 +13,16 @@ const config = {
     name: "@storybook/vue3-vite",
     options: {},
   },
-  viteFinal: async (config) => {
+  viteFinal: async (config, { configType }) => {
+    // Add Vue plugin
     config.plugins = [...(config.plugins || []), vue()];
+    
+    // Set the base URL for GitHub Pages when building for production
+    if (configType === 'PRODUCTION') {
+      // This ensures assets are loaded from the correct path on GitHub Pages
+      config.base = '/npm-packages/';
+    }
+    
     return config;
   },
 };
