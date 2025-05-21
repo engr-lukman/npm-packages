@@ -19,31 +19,42 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+// Template for all stories
+const Template = (args) => ({
+  components: { SecurePassword },
+  setup() {
+    const onPasswordHandler = (event) => {
+      args.callbackEvent(event);
+    };
+    return { args, onPasswordHandler };
+  },
+  template: `
+    <div style="max-width: 600px; margin: 2rem;">
+      <SecurePassword
+        :maxLength="args.maxLength"
+        :isError="args.isError"
+        :errorMessage="args.errorMessage"
+        :placeholder="args.placeholder"
+        :isEnableShuffle="args.isEnableShuffle"
+        :showKeyboard="args.showKeyboard"
+        :title="args.title"
+        :shiftLabel="args.shiftLabel"
+        :clearLabel="args.clearLabel"
+        @callbackEvent="onPasswordHandler"
+      />
+    </div>
+  `,
+});
+
 /**
  * Default example
  */
 export const Default: Story = {
+  render: Template,
   args: {
     maxLength: 100,
     isError: false,
     errorMessage: "",
-    placeholder: "Enter Password",
-    isEnableShuffle: false,
-    showKeyboard: true,
-    title: "Use this keyboard to enter your password",
-    shiftLabel: "Aa",
-    clearLabel: "Clear",
-  }
-};
-
-/**
- * With error
- */
-export const WithError: Story = {
-  args: {
-    maxLength: 100,
-    isError: true,
-    errorMessage: "Invalid password. Please try again.",
     placeholder: "Enter Password",
     isEnableShuffle: false,
     showKeyboard: true,
