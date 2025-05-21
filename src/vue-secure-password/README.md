@@ -2,6 +2,10 @@
 
 A secure password input component for Vue.js applications with a virtual keyboard and password masking, specifically designed for financial applications.
 
+## Demo
+
+Check out the [interactive Storybook demo](https://engr-lukman.github.io/npm-packages/?path=/story/components-secure-password-vue-js--default) to see the component in action.
+
 ## Features
 
 - **Secure Password Entry**: Automatically masks password input for privacy
