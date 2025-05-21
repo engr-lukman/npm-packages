@@ -1,4 +1,3 @@
-import { Meta, StoryObj } from '@storybook/vue3';
 import { SecurePassword } from "./src/index";
 
 /**
@@ -14,10 +13,11 @@ const meta = {
       description: 'Emitted when password value changes or clears' 
     }
   }
-} satisfies Meta<typeof SecurePassword>;
+};
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+// Define Story as JSDoc comment instead of TypeScript type
+/** @type {import('@storybook/vue3').StoryObj<typeof meta>} */
 
 // Template for all stories
 const Template = (args) => ({
@@ -48,8 +48,9 @@ const Template = (args) => ({
 
 /**
  * Default example
+ * @type {import('@storybook/vue3').StoryObj}
  */
-export const Default: Story = {
+export const Default = {
   render: Template,
   args: {
     maxLength: 100,

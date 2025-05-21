@@ -1,11 +1,10 @@
-import { Meta, StoryObj } from '@storybook/vue3';
 import { SecurePin } from "./src/index";
 
 /**
  * SecurePin - A secure PIN input component with virtual keyboard 
  * designed for financial applications
  */
-const meta = {
+export default {
   title: "Components/Secure Pin (Vue.js)",
   component: SecurePin,
   argTypes: {
@@ -14,10 +13,7 @@ const meta = {
       description: 'Emitted when PIN value changes or clears' 
     }
   }
-} satisfies Meta<typeof SecurePin>;
-
-export default meta;
-type Story = StoryObj<typeof meta>;
+};
 
 // Template for all stories
 const Template = (args) => ({
@@ -48,7 +44,7 @@ const Template = (args) => ({
 /**
  * Default example
  */
-export const Default: Story = {
+export const Default = {
   render: Template,
   args: {
     maxLength: 5,
