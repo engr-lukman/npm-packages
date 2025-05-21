@@ -108,7 +108,7 @@ The SecurePassword component provides a secure way to enter passwords using a vi
 - **Case Toggle**: "Aa" button toggles between uppercase and lowercase letters
 - **Clear Function**: Allows users to reset their input
 
-![Component Interface](./secure-password-component.png)
+![Component Interface](https://raw.githubusercontent.com/engr-lukman/npm-packages/main/src/vue-secure-password/secure-password-component.png)
 
 ## Component Architecture
 
